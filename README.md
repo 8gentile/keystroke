@@ -20,7 +20,7 @@ In addition, this project will include:
 
 The app will be a single screen with a game board, game controls, and nav links to the Github, my LinkedIn and my personal site. The only controls are the space bar, left and right arrow keys. A modal will record the player's name before the game renders.
 
-[Wireframe for Keystroke](./assets/wireframe.png)
+![Wireframe for Keystroke](./assets/wireframe.png)
 
 
 ## Architecture and Technologies
