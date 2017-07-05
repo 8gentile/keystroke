@@ -1,0 +1,87 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Keystroke</title>
+  <style>
+    canvas {
+      border: 5px solid black;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      let handle = null;
+      var x = 20;
+      var y = 295 ;
+      var iy = -20 // angle
+      var vx = 7; // power max(15?)
+      var vy = iy;
+      var g = 1;
+
+      canvas.width = 600;
+      canvas.height = 300;
+
+      const ballRadius = 5;
+
+      const gravityCalc = (n) => {
+        return n + g;
+      }
+
+      const drawBall = () => {
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      const collision = (x, y) => {
+        console.log(vx, vy, iy)
+        if (y >= 295) {
+          iy /= 2;
+          vy = iy;
+          vx /= 1.5;
+          if (vx < 1) {
+            console.log("I'm resting thooo");
+            clearInterval(handle);
+            return drawRest();
+          }
+        }
+      }
+
+      const drawCollision = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+        x += vx;
+        y += vy;
+        vy = gravityCalc(vy);
+        collision(x, y);
+      }
+
+      const drawRest = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+      }
+
+      // const handle = setInterval(drawCollision, 30);
+      const doKeyDown = (e) => {
+
+        switch(e.keyCode){
+          case 32:
+            handle = setInterval(drawCollision, 30);
+          default:
+            return null;
+        }
+      }
+
+      drawCollision();
+      window.addEventListener("keypress", doKeyDown, false);
+    })
+  </script>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+</body>
+</html>
