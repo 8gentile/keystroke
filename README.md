@@ -45,22 +45,22 @@ rebound.js: this script will be responsible for determining the path of a ball a
 
 ## Implementation Timeline
 
-###Day 1
+### Day 1
 Take this day to familiarize myself with Canvas. Decide whether Pixi is a suitable engine or decide whether another library would suit this project better. By the end of day 1, be able to render a ball on the screen and have it bounce against the edge of screen.
 
-###Day 2
+### Day 2
 Take the concepts learned from day 1 and be able to render the terrain graphics on screen. Have the ball fall out of the air and bounce off the terrain. Calculate collision physics and vector mathematics.
 
-###Day 3
+### Day 3
 Figure out how to get the ball to sit on the terrain. Begin to implement user controls. Render the hole on the terrain. Allow the user to manipulate the ball on the screen.
 
-###Day 4
+### Day 4
 Fine tune controls. Decide starting position and distance to hole. Draw terrain map. Implement the game rules and logic. Bonus: draw several terrains.
 
-###Day 5
+### Day 5
 Tie everything together and make the game playable. Roll introduction modal to take the user's name as input and display the leaderboards. Create Leaderboards table.
 
-##BONUS Features
+## BONUS Features
 - Modals
 - Multiple terrains
 - enhanced colors and UI
