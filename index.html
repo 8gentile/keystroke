@@ -15,8 +15,8 @@
       let handle = null;
       var x = 20;
       var y = 295 ;
-      var iy = -20 // angle
-      var vx = 7 ; // power max(15?)
+      var iy = -5 // angle
+      var vx = 1 ; // power max(15?)
       var vy = iy;
       var g = 1;
 
@@ -29,12 +29,20 @@
         return n + g;
       }
 
+
+
+
+      // FIX THE HUD
+
       const drawHUD = () => {
-        const lx = x + 5;
-        const ly = y - 5;
+        const hudx = Math.sign(vx) + vx;
+        const hudy = Math.sign(vy) + vy;
+        const mx = x + hudx;
+        const my = y + hudy;
+        console.log(mx, my);
         ctx.beginPath();
-        ctx.moveTo(lx, ly);
-        ctx.lineTo(lx + vx, ly + iy);
+        ctx.moveTo(mx, my);
+        ctx.lineTo(mx + hudx, my + hudy);
         ctx.stroke();
       }
 
@@ -55,8 +63,8 @@
           if (Math.abs(vx) < 1) {
             console.log("I'm resting tho");
             clearInterval(handle);
-            iy = -20;
-            vx = 7;
+            iy = -5;
+            vx = 1;
             vy = iy;
             return drawRest();
           }
@@ -81,28 +89,31 @@
       const doKeyDown = (e) => {
         switch(e.keyCode){
           case 32:
-            return handle = setInterval(drawCollision, 30);
-          case 97:
+            window.addEventListener("keyup", doKeyUp, false);
+            console.log(vx);
+            drawRest();
+            return vx = Math.sign(vx)*(Math.abs(vx) + 1);
+          case 97: //a
             if (Math.sign(vx) === 1) {
               vx = -1 * vx;
             }
             console.log(vx);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             return drawRest();
-          case 100:
+          case 100: //d
             if (Math.sign(vx) === -1) {
               vx = -1 * vx;
             }
             console.log(vx);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             return drawRest();
-          case 115:
+          case 115: //s
             vy += 1;
             iy += 1;
             console.log(vy);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             return drawRest();
-          case 119:
+          case 119: //w
             vy -= 1;
             iy -= 1;
             console.log(vy);
@@ -110,6 +121,12 @@
             return drawRest();
           default:
             return null;
+        }
+      }
+
+      const doKeyUp = (e) => {
+        if (e.keyCode === 32) {
+          return handle = setInterval(drawCollision, 30);
         }
       }
 
