@@ -31,5 +31,21 @@
   <canvas id="canvas"></canvas>
   <img src="assets/controls.png" alt="controls">
   <img id="me"src="assets/creator.png" alt="creator">
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB70wgGlrv08_wGARhTwzdNX3ARlkRnhik",
+      authDomain: "keystroke-4a09e.firebaseapp.com",
+      databaseURL: "https://keystroke-4a09e.firebaseio.com",
+      projectId: "keystroke-4a09e",
+      storageBucket: "keystroke-4a09e.appspot.com",
+      messagingSenderId: "287591047691"
+    };
+    firebase.initializeApp(config);
+
+    var database = firebase.database();
+  </script>
 </body>
 </html>
