@@ -33,6 +33,10 @@
   <canvas id="canvas">Please switch to a modern browser, such as <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a></canvas>
   <img src="assets/controls.png" alt="controls">
   <img id="me"src="assets/creator.png" alt="creator">
+  <!-- Links -->
+
+  <!-- Leaderboard Header Image -->
+  <ol class="leaderboard-list">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
   <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
@@ -50,12 +54,6 @@
 
     var database = firebase.database();
 
-    function writeUserData(player, score) {
-      firebase.database().ref('users/' + userId).set({
-        palyer: player,
-        score: score,
-      });
-    }
   </script>
 </body>
 </html>
