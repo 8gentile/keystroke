@@ -25,6 +25,23 @@
     #me {
       display: block;
     }
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top: 3px solid black;
+      margin-top: 2rem;
+      padding-top: 2rem;
+    }
+    .leaderboard-list {
+      font-family: Impact;
+      font-size: 30px;
+      width: 40%;
+    }
+    .leaderboard-li {
+      border-top: 1px solid black;
+    }
   </style>
   <script type="application/javascript" src="lib/keystroke.js"></script>
 </head>
@@ -36,7 +53,10 @@
   <!-- Links -->
 
   <!-- Leaderboard Header Image -->
-  <ol class="leaderboard-list">
+  <section>
+    <img src="assets/leaderboard.png" alt="leaderboard">
+    <ol class="leaderboard-list">
+  </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
   <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
