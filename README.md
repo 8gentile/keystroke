@@ -8,7 +8,7 @@ A single-player golf game that tracks the player's score, awarding more points f
 - Adjust your angle/y-velocity using the `w` or `s` keys.
 - Hold down `spacebar` to add power/x-velocity and release to stroke.
 - Use `a` and `d` to change directions.
-- Backspin: add backspin-power to your stroke with the `b` button, then press `spacebar` to stroke.
+- Backspin: add backspin to your stroke by holding down `b` + `spacebar` to stroke.
 
 ## Features
 ### Algorithmic Map Generation
