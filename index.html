@@ -54,12 +54,28 @@
       color: black;
       cursor: pointer;
     }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      margin-right: 2rem;
+    }
+    li {
+      text-align: left;
+    }
   </style>
   <script type="application/javascript" src="lib/keystroke.js"></script>
 </head>
 <body>
   <img src="assets/keystroke.png" alt="keystroke">
   <canvas id="canvas">Please switch to a modern browser, such as <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a></canvas>
+
+  <!-- Audio -->
   <audio id ="driver" src="assets/audio/driver.mp3" type="audio/mp3"></audio>
   <audio id ="clap" src="assets/audio/clap.mp3" type="audio/mp3">
     Your browser does not support the audio element.
@@ -70,14 +86,47 @@
   <audio id ="holeCol" src="assets/audio/hole.wav" type="audio/wav"></audio>
   <audio id ="sandCol" src="assets/audio/sand.wav" type="audio/wav"></audio>
   <audio id ="mediumclap" src="assets/audio/mediumclap.mp3" type="audio/mp3"></audio>
-  <img src="assets/controls.png" alt="controls">
-  <img id="me" src="assets/creator.png" alt="creator">
+
+  <!-- Control Graphics -->
+  <!-- header -->
+
+  <!-- direction -->
+  <div class="control-wrapper">
+    <img src="assets/controls.png" alt="controls">
+    <ul>
+      <li>
+        <img src="assets/controls/a.png" alt="controls"><img src="assets/controls/or.png" alt="controls"><img src="assets/controls/d.png" alt="controls"><img src="assets/controls/for-direction.png" alt="controls">
+        <br/>
+      </li>
+
+      <!-- angle -->
+      <li>
+        <img src="assets/controls/w.png" alt="controls"><img src="assets/controls/or.png" alt="controls"><img src="assets/controls/s.png" alt="controls"><img src="assets/controls/for-angle.png" alt="controls">
+        <br/>
+      </li>
+      <!-- power -->
+      <li>
+        <img src="assets/controls/spacebar.png" alt="controls"><img src="assets/controls/power.png" alt="controls">
+        <br/>
+      </li>
+      <!-- backspin -->
+      <li>
+        <img src="assets/controls/b.png" alt="controls"><img src="assets/controls/adds-backspin.png" alt="controls">
+        <br/><br/>
+      </li>
+    </ul>
+  </div>
+  <!-- signature -->
+  <a href="http://ngentile.nyc" target="_blank"><img id="me" src="assets/creator.png" alt="creator"></a>
+
+  <!-- Links -->
   <a target="_blank" href="https://github.com/8gentile"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
   <a target="_blank" href="https://www.linkedin.com/in/gentilenicholas"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-  <!-- Links -->
 
-  <!-- Leaderboard Header Image -->
+
+  <!-- Leaderboard -->
   <section>
+    <!-- Leaderboard Header Image -->
     <img src="assets/leaderboard.png" alt="leaderboard">
     <ol class="leaderboard-list">
   </section>
